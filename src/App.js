@@ -1,12 +1,34 @@
-import './App.css';
-import Home from './pages/shared/Home';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './pages/user/Dashboard';
 
-function App() {
+
+const App = () => {
+ 
+
   return (
-    <>
-      <Home/>
-    </>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+         
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+            
+           
+          </ul>
+        </nav>
+        </div>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          
+
+         
+        
+              
+        </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
