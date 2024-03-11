@@ -6,6 +6,7 @@ import ParentDashboard from '../parent/ParentDashboard';
 import Games from '../user/Games';
 import Appointment from '../user/Appointment';
 import Home from '../shared/Home';
+import Department from './Department';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -146,6 +147,7 @@ const Navigation = () => {
         <Route path="/parentDashboard" element={<ParentDashboard />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/games" element={<Games />} />
+        <Route path="/department" element={<Department />} />
       </Routes>
     </>
   );

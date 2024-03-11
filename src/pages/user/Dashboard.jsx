@@ -18,7 +18,7 @@ const Dashboard = () => {
         
             <h2 className="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
                 <span className="font-light">Welcome</span> {user.forename}
-                <p>You are coming to the {user.department} department</p>
+                <p>You are coming to the {user.department_id.name} department</p>
             </h2>
         
         </header>
@@ -32,13 +32,13 @@ const Dashboard = () => {
         />
           <UserCard
             heading='Meet the Team'
-            subheading={user.department}
+            subheading={user.department_id.name}
             avatarSrc="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png"
             
         />
          <UserCard
             heading='Map'
-            subheading={`${user.department} departmanet location`}
+            subheading={`${user.department_id.name} departmanet location`}
             avatarSrc="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png"
         />
          <UserCard

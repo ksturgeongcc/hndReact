@@ -11,8 +11,11 @@ const userSchema = new mongoose.Schema({
   notes: String,
   dob: Date,
   patient_number: Number,
+  department_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Department' },
 });
 
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
+
+

@@ -51,15 +51,15 @@ const Login = () => {
   return (
     <main className="h-screen w-full overflow-scroll bg-white border-l">
 
-    <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
-						<h3 class="pt-4 text-2xl text-center">Welcome Back!</h3>
-						<div class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
-							<div class="mb-4">
-								<label class="block mb-2 text-sm font-bold text-gray-700" for="patient_number">
+    <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+						<h3 className="pt-4 text-2xl text-center">Welcome Back!</h3>
+						<div className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+							<div className="mb-4">
+								<label className="block mb-2 text-sm font-bold text-gray-700" for="patient_number">
 									Username
 								</label>
 								<input
-									class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+									className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
 									id="patient_number"
                   value={patient_number}
                   onChange={(e) => setPatientNumber(e.target.value)}
@@ -67,30 +67,30 @@ const Login = () => {
 									placeholder="Paitent Number"
 								/>
 							</div>
-							<div class="mb-4">
-								<label class="block mb-2 text-sm font-bold text-gray-700" for="password">
+							<div className="mb-4">
+								<label className="block mb-2 text-sm font-bold text-gray-700" for="password">
 									Password
 								</label>
 								<input
-									class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+									className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
 									id="password"
 									type="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
 								/>
-								<p class="text-xs italic text-red-500">Please choose a password.</p>
+								<p className="text-xs italic text-red-500">Please choose a password.</p>
 							</div>
-							<div class="mb-4">
-								<input class="mr-2 leading-tight" type="checkbox" id="checkbox_id" checked={parent} onChange={() => setParent(!parent)}/>
+							<div className="mb-4">
+								<input className="mr-2 leading-tight" type="checkbox" id="checkbox_id" checked={parent} onChange={() => setParent(!parent)}/>
    
-								<label class="text-sm" for="checkbox_id">
+								<label className="text-sm" for="checkbox_id">
 									Parent?
 								</label>
 							</div>
-							<div class="mb-6 text-center">
+							<div className="mb-6 text-center">
 								<button
-									class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+									className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
 									type="submit"
                   onClick={handleLogin}
 
