@@ -1,10 +1,8 @@
 // UserCard.js
 import React from 'react';
 import {Link} from 'react-router-dom';
-
 const UserCard = ({ heading, subheading, avatarSrc, page }) => (
   <div className="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-    {/* Your existing UserCard component JSX */}
     <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s">
       <div className="relative overflow-hidden px-6">
         <img src={avatarSrc} className="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title" />
@@ -16,5 +14,4 @@ const UserCard = ({ heading, subheading, avatarSrc, page }) => (
     </div>
   </div>
 );
-
 export default UserCard;
