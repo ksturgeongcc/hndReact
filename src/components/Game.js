@@ -17,7 +17,6 @@ const Game = ({ image, url, name, description }) => (
         </div>
       </div>
       </Link>
-
 </div>
 );
 export default Game;
