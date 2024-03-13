@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 
 
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection
-const MONGO_URI = 'mongodb+srv://karenmd:MSgyp9jI3dx7KvNA@cluster0.jz6h4uo.mongodb.net/portal?retryWrites=true&w=majority';
+const MONGO_URI = process.env.MONGO_URI
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
