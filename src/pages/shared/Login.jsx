@@ -52,7 +52,7 @@ const Login = () => {
     <main className="h-screen w-full overflow-scroll bg-white border-l">
 
     <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
-						<h3 className="pt-4 text-2xl text-center">Welcome Back!</h3>
+						<h3 className="pt-4 text-2xl text-center">Welcome! Please log in</h3>
 						<div className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
 							<div className="mb-4">
 								<label className="block mb-2 text-sm font-bold text-gray-700" for="patient_number">
@@ -79,13 +79,13 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
 								/>
-								<p className="text-xs italic text-red-500">Please choose a password.</p>
+								<p className="text-xs italic text-red-500">Forgot your login details?</p>
 							</div>
 							<div className="mb-4">
 								<input className="mr-2 leading-tight" type="checkbox" id="checkbox_id" checked={parent} onChange={() => setParent(!parent)}/>
    
 								<label className="text-sm" for="checkbox_id">
-									Parent?
+									Parent/Guardian please select
 								</label>
 							</div>
 							<div className="mb-6 text-center">

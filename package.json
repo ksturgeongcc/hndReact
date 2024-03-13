@@ -1,5 +1,6 @@
 {
   "name": "hndb3",
+  "homepage": "https://portal.splasheffectweb.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

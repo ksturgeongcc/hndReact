@@ -8,12 +8,12 @@ const Games = () => {
     return (     
       <>
       {user && (
-        <main className="h-screen w-full overflow-scroll bg-white border-l">
+        <main className="h-screen w-full overflow-scroll bg-white border-l overflow-y-hidden">
           <div id="team" className="section relative bg-white dark:bg-gray-800">
             <div className="container xl:max-w-6xl mx-auto">
-                <div className="h-screen flex flex-col bg-gray-900 items-center justify-center">
+                <div className="h-screen flex flex-col p-5 bg-gray-900 items-center justify-center">
                     <h1 className="text-white">Online Games</h1>
-                  <div className="grid grid-cols-12 gap-2 gap-y-4 max-w-6xl px-3">   
+                  <div className="grid grid-cols-12 gap-2 gap-y-4 max-w-6xl px-3 overflow-y-scroll">   
                     {/* <!-- game 1 --> */}
                     {gameData.map((game, index) => (
                       <Game

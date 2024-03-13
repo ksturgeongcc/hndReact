@@ -1,86 +1,83 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './home.css';
+import gameImg from '../../assets/images/games.png';
+import apptImg from '../../assets/images/appointment.jpg';
+import deptImg from '../../assets/images/department.jpg';
 
 const Home = () => {
-    return (
-        <>
-        <main className="h-screen w-full overflow-scroll bg-white border-l">
-            <div className="mx-6">
-                <h1 className="my-6 text-3xl">All Courses</h1>
-                <div className="md:flex  space-y-3 md:space-y-0 md:space-x-4 mt-6">
-                    <div className="h-90 bg-gradient-to-r rounded-md from-indigo-600 to-purple-600 p-10">
-                        <p className="text-3xl font-thin text-indigo-50 cursor-pointer">How to do Basic Jumping and how to
-                            landing safely</p>
-                        <div className="flex items-center mt-4 space-x-4">
-                            <img className="w-10 h-10 rounded-full cursor-pointer" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-                            <div>
-                                <h3 className="text-indigo-50 font-semibold cursor-pointer">Thomas Hope</h3>
-                                <p className="text-indigo-50 text-sm font-thin">53K views • 2 weeks ago</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="h-90 bg-gradient-to-r rounded-md from-indigo-600 to-purple-600 p-10">
-                        <p className="text-3xl font-thin text-indigo-50 cursor-pointer">How to do Basic Jumping and how to
-                            landing safely</p>
-                        <div className="flex items-center mt-4 space-x-4">
-                            <img className="w-10 h-10 rounded-full cursor-pointer" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-                            <div>
-                                <h3 className="text-indigo-50 font-semibold cursor-pointer">Thomas Hope</h3>
-                                <p className="text-indigo-50 text-sm font-thin">53K views • 2 weeks ago</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  const [token, setToken] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch the token from wherever you store it (localStorage, sessionStorage, etc.)
+    const storedToken = localStorage.getItem('token');
+    setToken(storedToken);
+  }, []);
+
+  const handleRedirect = (path) => {
+    if (token) {
+      navigate(path); // Redirect based on the path parameter
+    } else {
+      navigate('/login');
+    }
+  };
+
+  return (
+    <main className="h-screen w-full overflow-scroll bg-black border-l">
+      <div className="mx-6">
+        <div className="flex justify-between">
+          <h1 className="my-6 text-3xl text-white">Glasgow Clyde Childrens Hospital</h1>
+          <button className="w-full mt-10 bg-black py-1.5 text-yellow-300 border-yellow-300 border-2 border-solid bor">
+            Request your login details
+          </button>
+        </div>
+      </div>
+      <div className="mx-6 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 mt-10">
+        <div className="shadow-lg rounded-t-md overflow-hidden" onClick={() => handleRedirect('/games')}>
+          <div>
+            <img className="w-sm" src={gameImg} alt="" />
+            <div className="p-2 relative">
+              <p className="text-lg mt-6 font-semibold text-white">Play Games</p>
             </div>
-		    <div className="mx-6 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 mt-10">
-			    <div className="shadow-lg rounded-t-md overflow-hidden ">
-                    <div className="">
-                        <img className="w-sm" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="" />
-                        <div className="p-2 relative">
-                            <p className="text-lg mt-6 font-semibold">Basic how to ride your skateboard comfortly</p>
-                            <p>53K views • 2 weeks ago</p>
-                            <img className="h-12 w-12 rounded-full absolute -top-6 p-0.5 border-2 right-6" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="shadow-lg rounded-t-md overflow-hidden">
-                    <div className="">
-                        <img className="w-sm" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="" />
-                        <div className="p-2 relative">
-                            <p className="text-lg mt-6 font-semibold">Basic how to ride your skateboard comfortly</p>
-                            <p>53K views • 2 weeks ago</p>
-                            <img className="h-12 w-12 rounded-full absolute -top-6 p-0.5 border-2 right-6" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="shadow-lg rounded-t-md overflow-hidden ">
-                    <div className="">
-                        <img className="w-sm" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="" />
-                        <div className="p-2 relative">
-                            <p className="text-lg mt-6 font-semibold">Basic how to ride your skateboard comfortly</p>
-                            <p>53K views • 2 weeks ago</p>
-                            <img className="h-12 w-12 rounded-full absolute -top-6 p-0.5 border-2 right-6" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="shadow-lg rounded-t-md overflow-hidden ">
-                    <div className="">
-                        <img className="w-sm" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="" />
-                        <div className="p-2 relative">
-                            <p className="text-lg mt-6 font-semibold">Basic how to ride your skateboard comfortly
-                            </p>
-                            <p>53K views • 2 weeks ago</p>
-                            <img className="h-12 w-12 rounded-full absolute -top-6 p-0.5 border-2 right-6" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div className="shadow-lg rounded-t-md overflow-hidden" onClick={() => handleRedirect('/appointment')}>
+          <div>
+            <img className="w-sm" src={apptImg} alt="" />
+            <div className="p-2 relative">
+              <p className="text-lg mt-6 font-semibold text-white">View your appointment information</p>
             </div>
-            <footer className="text-center py-6 mt-4">
-                Copyright &copy; 2022 dej45.com Template by Namina
-            </footer>
-        </main>      
-        </>
-    )
-}
+          </div>
+        </div>
+        <div className="shadow-lg rounded-t-md overflow-hidden cursor-pointer" onClick={() => handleRedirect('/department')}>
+          <div>
+            <img className="w-sm" src={deptImg} alt="" />
+            <div className="p-2 relative">
+              <p className="text-lg mt-6 font-semibold text-white">View Department Details</p>
+            </div>
+          </div>
+        </div>
+        <div className="shadow-lg rounded-t-md overflow-hidden" onClick={() => handleRedirect('/department')}>
+          <div>
+            <img className="w-sm" src={deptImg} alt="" />
+            <div className="p-2 relative">
+              <p className="text-lg mt-6 font-semibold text-white">Meet your team</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="md:flex space-y-3 md:space-y-0 md:space-x-4 mt-6 px-10">
+        <div className="h-90 border-2 p-5 border-yellow-300 border-solid flex items-center justify-center">
+          <p className="text-3xl font-thin text-white">Get access to your appointment details</p>
+        </div>
+        <div className="h-90 border-2 p-5 border-yellow-300 border-solid flex items-center justify-center">
+          <p className="text-3xl font-thin text-white">Get details of the department you will be visiting</p>
+        </div>
+      </div>
+      <footer className="text-center py-6 mt-4">Copyright &copy; 2022 dej45.com Template by Namina</footer>
+    </main>
+  );
+};
 
 export default Home;

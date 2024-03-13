@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const Game = ({ image, url, name, description }) => (
-<div className="col-span-12 sm:col-span-6 md:col-span-3">
+<div className="col-span-12 sm:col-span-6 md:col-span-4 p-3">
 <Link to={url} target='_blank'>
       <div className="w-full flex flex-col">
         <div className="relative">
