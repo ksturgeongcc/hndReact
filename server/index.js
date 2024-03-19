@@ -4,6 +4,8 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const User =require('./models/User');
+const Department =require('./models/Department');
 
 
 
@@ -26,36 +28,6 @@ mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
 });
 
-// User model
-const User = mongoose.model('User', {
-  email: String,
-  password: String,
-  forename: String,
-  surname: String,
-  department: String,
-  guardian: String,
-  guardian_name: String,
-  notes: String,
-  dob: Date,
-  patient_number: Number,
-  department_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Department' },
-  appointment_date: Date,
-  appointment_notes: String,
-
-});
-const Department = mongoose.model('Department', {
-  name: String,
-  details: String,
-  consultant: String,
-  nurse: String,
-  consultant_img: String,
-  nurse_img: String,
-  img_one: String,
-  img_two: String,
-  img_three: String,
-  map: String,
-});
-console.log('Dept: ' + Department);
 
 app.get('/api/users', async (req, res) => {
   try {
