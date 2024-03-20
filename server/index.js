@@ -4,8 +4,8 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const User =require('./models/User');
-const Department =require('./models/Department');
+const User = require('./models/User');
+require('./models/Department');
 
 
 
@@ -58,7 +58,6 @@ const formattedUser = {
   email: user.email,
   forename: user.forename,
   surname: user.surname,
-  is_admin: user.is_admin, // Add this line
   guardian: user.guardian, // Add this line
   guardian_name: user.guardian_name,
   notes: user.notes, 
@@ -112,14 +111,12 @@ app.post('/api/login', async (req, res) => {
     // Include is_admin in the token payload
     const tokenPayload = {
       userId: user._id,
-      is_admin: user.is_admin
     };
 
     const token = jwt.sign(tokenPayload, 'your-secret-key', {
       expiresIn: '1h',
     });
 
-    // Include is_admin in the response
     res.json({ token });
   } catch (error) {
     console.error(error);

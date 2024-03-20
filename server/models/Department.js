@@ -5,7 +5,7 @@ const departmentSchema = new mongoose.Schema({
   details: String,
   consultant: String,
   nurse: String,
-  constultant_img: String,
+  consultant_img: String,
   nurse_img: String,
   img_one: String,
   img_two: String,

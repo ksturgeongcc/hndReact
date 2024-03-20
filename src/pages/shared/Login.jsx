@@ -104,30 +104,6 @@ const Login = () => {
 
 </main>
 
-    // <div>
-    //   <h2>Login</h2>
-    //   <input
-    //     type="text"
-    //     placeholder="Patient Number"
-    //     value={patient_number}
-    //     onChange={(e) => setPatientNumber(e.target.value)}
-    //   />
-    //   <input
-    //     type="password"
-    //     placeholder="Password"
-    //     value={password}
-    //     onChange={(e) => setPassword(e.target.value)}
-    //   />
-    //   <label>
-    //     <input
-    //       type="checkbox"
-    //       checked={parent}
-    //       onChange={() => setParent(!parent)}
-    //     />
-    //     Remember Me
-    //   </label>
-    //   <button onClick={handleLogin}>Login</button>
-    // </div>
   );
 };
 
