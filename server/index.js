@@ -28,7 +28,33 @@ mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
 });
 
+// Register route
+app.post('/api/register', async (req, res) => {
+  try {
+    const { patient_number, password, forename, surname, email, dob, guardian_name, guardian } = req.body;
 
+    // Check if the patient number already exists
+    const existingUser = await User.findOne({ patient_number });
+    if (existingUser) {
+      return res.status(400).json({ error: 'patient number already registered' });
+    }
+
+    // Hash the password before saving it to the database
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create a new user instance and save it to the 'users' collection
+    const newUser = new User({ patient_number, password: hashedPassword, forename, surname, email, dob, guardian_name, guardian  });
+    await newUser.save();
+
+    res.status(201).json({ message: 'User registered successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+//get users
 app.get('/api/users', async (req, res) => {
   try {
     // Extract the token from the request headers

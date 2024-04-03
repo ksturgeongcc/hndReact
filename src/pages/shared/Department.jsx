@@ -13,8 +13,7 @@ const Department = () => {
     return (  
         <>
             {user && (
-                <main className="h-screen w-full overflow-scroll bg-white border-l">
-                    <div id="team" className="section relative  pb-8 bg-white dark:bg-gray-800">
+                    <div id="team" className="section relative bg-white dark:bg-gray-800">
                         <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
                         <section className="pt-2 pb-10 lg:pb-20 bg-[#F3F4F6]">
                             <div className="container">
@@ -37,7 +36,6 @@ const Department = () => {
                             </div>
                         </section>    
                     </div>
-                </main>
             )}
         </>
     );

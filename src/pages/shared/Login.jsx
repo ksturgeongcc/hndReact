@@ -49,7 +49,6 @@ const Login = () => {
   }, []);
 
   return (
-    <main className="h-screen w-full overflow-scroll bg-white border-l">
 
     <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<h3 className="pt-4 text-2xl text-center">Welcome! Please log in</h3>
@@ -102,7 +101,6 @@ const Login = () => {
 						</div>
 					</div>
 
-</main>
 
   );
 };

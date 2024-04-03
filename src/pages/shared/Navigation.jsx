@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link, useNavigate } from 'react-router-dom';
-import Login from './Login';
-import Dashboard from '../user/Dashboard';
-import ParentDashboard from '../parent/ParentDashboard';
-import Games from '../user/Games';
-import Appointment from '../user/Appointment';
-import Home from '../shared/Home';
-import Department from './Department';
-import Map from './Map';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -118,7 +111,15 @@ const Navigation = () => {
                   <span className="font-semibold"><Link to="/login">Login</Link></span>
                   
                 </li>
-              
+                <li className="flex space-x-2 mt-10 cursor-pointer hover:text-yellow-300 duration-150">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span className="font-semibold"><Link to="/register">Register</Link></span>
+                  
+                </li>
                 <li className="flex space-x-2 mt-10 cursor-pointer hover:text-yellow-300 duration-150">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -134,17 +135,6 @@ const Navigation = () => {
           </ul>
         </div>
       </div>
-
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/parentDashboard" element={<ParentDashboard />} />
-        <Route path="/appointment" element={<Appointment />} />
-        <Route path="/games" element={<Games />} />
-        <Route path="/department" element={<Department />} />
-        <Route path="/map" element={<Map />} />
-      </Routes>
     </>
   );
 };

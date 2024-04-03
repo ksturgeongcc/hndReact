@@ -24,8 +24,9 @@ const Home = () => {
   };
 
   return (
-    <main className="h-screen w-full overflow-scroll bg-black border-l">
-      <div className="mx-6">
+    <>
+    <div className='bg-black h-full'>
+      <div className="mx-6 bg-black">
         <div className="flex justify-between">
           <h1 className="my-6 text-3xl text-white">Glasgow Clyde Childrens Hospital</h1>
           <button className="w-full mt-10 bg-black py-1.5 text-yellow-300 border-yellow-300 border-2 border-solid bor">
@@ -75,8 +76,8 @@ const Home = () => {
           <p className="text-3xl font-thin text-white">Get details of the department you will be visiting</p>
         </div>
       </div>
-      <footer className="text-center py-6 mt-4">Copyright &copy; 2022 dej45.com Template by Namina</footer>
-    </main>
+      </div>
+      </>
   );
 };
 

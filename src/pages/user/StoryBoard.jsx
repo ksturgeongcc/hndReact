@@ -16,7 +16,7 @@ const StoryBoard = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentFrame((prevFrame) => (prevFrame + 1) % frames.length);
-    }, 5000); // Switch frame every 5 seconds
+    }, 3000); // Switch frame every 5 seconds
 
     return () => clearInterval(interval);
   });
@@ -31,7 +31,7 @@ const StoryBoard = () => {
           classNames="frame"
           unmountOnExit
         >
-          <div className="text-center">
+          <div className="flex absolute top-0 left-0 h-full w-full bg-black text-white items-center justify-center">
             <h1 className="text-4xl font-bold mb-4">{frame}</h1>
           </div>
         </CSSTransition>

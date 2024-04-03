@@ -5,7 +5,6 @@ const ParentDashboard = () => {
   const user = UserInformation();    
     return (
         <>
-        <main className="h-screen w-full overflow-scroll bg-white border-l">
             <div className="parent-dashboard">
             {user && (
                 <section className="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
@@ -25,7 +24,6 @@ const ParentDashboard = () => {
 </section>
             )}            
             </div>
-        </main>
         </>
     );
 }
