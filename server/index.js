@@ -11,7 +11,7 @@ require('./models/Department');
 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 
 app.use(express.json());
@@ -152,6 +152,6 @@ app.post('/api/login', async (req, res) => {
 
 
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(() => {
+  console.log(`Server is running on port`);
 });

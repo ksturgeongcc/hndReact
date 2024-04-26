@@ -13,7 +13,7 @@ const Dashboard = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(true);
-        }, 5000); // Delay of 5 seconds
+        }); // Delay of 5 seconds
 
         return () => clearTimeout(timer); // Cleanup timer on component unmount
     }, []);
