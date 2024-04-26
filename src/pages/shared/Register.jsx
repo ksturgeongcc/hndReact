@@ -14,7 +14,7 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      await axios.post('http://localhost/api/register', {
+      await axios.post('https://hnd-react.vercel.app/api/register', {
         patient_number,
         password,
         email,
