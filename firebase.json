@@ -1,7 +1,7 @@
 {
   "emulators": {
     "pubsub": {
-      "port": 10000
+      "port": 5000
     },
     "ui": {
       "enabled": true

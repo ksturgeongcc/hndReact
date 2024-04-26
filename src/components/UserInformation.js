@@ -12,7 +12,7 @@ const UserInformation = () => {
           console.error('No token found');
           return;
         }
-        const response = await axios.get('http://localhost:10000/api/users', {
+        const response = await axios.get('http://localhost:5000/api/users', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
